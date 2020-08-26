@@ -1,0 +1,17 @@
+---
+- hosts: all
+  gather_facts: true
+  tasks:
+    - name: install dependencies requirements.txt
+      pip:
+        requirements: requirements.txt
+        chdir: .
+        executable: pip3
+
+    - name: additional dependency
+      pip: 
+        name: gunicorn
+        executable: pip3
+    
+
+    
